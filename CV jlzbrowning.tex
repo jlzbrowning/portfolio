@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{hhline}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{environ}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }					
+\usepackage[dvipsnames]{xcolor}		
+\usepackage{tikz}
+\usetikzlibrary{shadows, patterns, backgrounds, shapes,automata, positioning, arrows.meta}	
+\usepackage[left=0cm , right=0cm , top=0cm , bottom=0cm]{geometry}
+\usepackage{paracol}
+\usepackage{tabto}
+\usepackage{fontawesome5}
+\usepackage{setspace}
+\usepackage{dashrule}
+\usepackage{url}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, poster}
+\usepackage{metalogo}
+\usepackage{calc}
+\usepackage{incgraph}
+\usepackage{eso-pic}
+\usepackage{fontspec}
+\hypersetup{colorlinks=false}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+
+% fonts
+\setmainfont{Lato}
+  \setsansfont{Krona One}
+
+
+%% Style Interface
+
+\newcommand{\fonthead}{\large \sffamily}
+\newcommand{\fontdate}{\bfseries \small}
+\newcommand{\fonttitle}{\large \bfseries}
+\newcommand{\fontdesc}{\normalsize \color{black!80!white}}
+\newcommand{\fontcont}{\hspace{5pt}\bfseries}
+\newcommand{\fontcontsub}{\slshape}
+\newcommand{\fontnametop}{\Large \sffamily \color{white}}
+
+\newcommand{\outgoingsize}{\scriptsize}
+
+\newcommand{\buffer}{\vspace{7pt}}
+
+\newcommand{\topheadcol}{black!90!white}
+\newcommand{\leftcol}{Dandelion!50!Tan}
+\newcommand{\rightcol}{black!5!white}
+
+% Commands
+
+\newcommand{\leftlist}[1]{{\fontcont \begin{itemize}[label={\outgoingsize \color{\topheadcol}\faCircleNotch},leftmargin=0pt , itemsep=0.3cm] {#1} \end{itemize}}}
+
+\newcommand{\leftlistshort}[1]{{\fontcont \begin{itemize}[label={\outgoingsize \color{\topheadcol}\faAngleRight},leftmargin=0pt , itemsep=0.1cm] {#1} \end{itemize}}}
+
+\newtcbox{\tchead}{right=3cm, colback=\topheadcol , colframe=\topheadcol , coltext=white , fontupper=\fonthead , arc=8mm, sharp corners=all, rounded corners=southeast, on line}
+\newtcbox{\tcheadleft}{right=3cm, colback=\topheadcol ,coltext=\leftcol , fontupper=\fonthead , arc=8mm, sharp corners=all, rounded corners=southeast, on line, colframe=\topheadcol}
+\newtcbox{\tcheadmini}{right=0.7cm, colback=\topheadcol ,coltext=\leftcol , fontupper=\fonthead , arc=8mm, sharp corners=all, rounded corners=southeast, colframe=\topheadcol ,on line}
+\newcommand{\tcheadshift}{-0.67cm}
+
+\begin{document}
+
+
+\begin{tcbposter}[
+poster={columns=3, rows=6, spacing=0cm},
+coverage={spread, colback=\topheadcol},
+%
+boxes={enhanced, halign=left, arc=4mm, sharp corners=all}
+]
+
+\posterbox[rounded corners=all, colback=\topheadcol, colframe=\leftcol, boxsep=0.7cm, halign=center, valign=center, boxrule=0.15cm, attach boxed title to bottom center={yshift=0.4cm}, boxed title style={colframe=\topheadcol}, colbacktitle=\topheadcol, title={\large LINGUIST \& WRITER}, titlerule=0cm]{column=2, span=1.3, row=1, rowspan=0.3, xshift=2cm, yshift=-0.2cm}{\fontnametop JAMES BROWNING}
+
+\posterbox[colback=\leftcol, colframe=\leftcol]{column=1, row=2, rowspan=5.5, span=1, xshift=-0.4cm, yshift=2cm}{
+\vspace{1.5cm}
+{\hspace{\tcheadshift}\tcheadmini{CONTACT}}\\
+\buffer
+\buffer
+\buffer
+{\hspace{\tcheadshift}\tcheadmini{\faEnvelope}} {\fontcont \href{mailto:jlzbrowning@gmail.com}{jlzbrowning@gmail.com {\outgoingsize \faExternalLink*}}}\\
+\buffer
+{\hspace{\tcheadshift}\tcheadmini{\faLinkedinIn}} {\fontcont \href{www.linkedin.com/in/jlzbrowning}{linkedin.com/jlzbrowning {\outgoingsize \faExternalLink*}}}\\
+\buffer
+{\hspace{\tcheadshift}\tcheadmini{\faTwitter}} {\fontcont \href{https://twitter.com/jlzbcomms}{twitter.com/jlzbcomms {\outgoingsize \faExternalLink*}}}\\
+\buffer
+{\hspace{\tcheadshift}\tcheadmini{\faMapMarker*}} {\fontcont Cape Town, South Africa}\\
+\buffer
+\buffer
+\buffer
+{\hspace{\tcheadshift}\tcheadmini{SKILLS}}\\
+{\leftlist{\item Copy Writing, Editing, Proofreading
+\item Typesetting via \LaTeX
+\item Data Visualisation in \texttt{Python} via \texttt{seaborn} and in \LaTeX \ via \texttt{pgfplots}
+\item Phonetic Transcription
+\item Research Design}}
+\buffer
+\buffer
+\buffer
+{\hspace{\tcheadshift}\tcheadmini{INTERESTS}}\\
+{\leftlist{\item Copy \& Communication
+\item Language \& Cognition
+\item Natural Language Processing
+\item Humanistic Tech
+\item Deep Learning
+\item Corpus Analysis}}
+
+
+}
+
+\posterbox[right=2cm, colback=\rightcol, colframe=\rightcol]{column=2, row=2, rowspan=5.5, span=2.2, xshift=-0.4cm, yshift=2cm}{
+{\hspace{\tcheadshift} \tchead{PROFILE}}\\
+\buffer
+\buffer
+{\fontdesc I am passionate about language and communication, with a background in \mbox{linguistics,} copy, document generation and language research.\\
+I have enthusiastic interpersonal skills tempered by time in \mbox{student} leadership and service industry work.\\
+This document was typeset in \LaTeX . I have experience editing and typesetting academic articles \& study material.}\\
+\buffer
+\buffer
+\buffer
+{\hspace{\tcheadshift} \tchead{EDUCATION}}\\
+\buffer
+\buffer
+{\fontdate 2016-2019}\\
+{\fonttitle Bachelor of Arts (Humanities)}\\
+{\fontdesc Stellenbosch University}\\
+\buffer
+{\fontdate 2020}\\
+{\fonttitle BA Honours (Linguistics)}\\
+{\fontdesc Stellenbosch University}\\
+\buffer
+{\fontdate 2020}\\
+{\fonttitle TEFL}\\
+{\fontdesc S.U. Language Centre\\
+120-hour Teaching English as a Foreign Language course, including 5 hours of in-class teaching}\\
+\buffer
+\buffer
+\buffer
+{\hspace{\tcheadshift} \tchead{WORK EXPERIENCE}}\\
+\buffer
+\buffer
+{\fontdate 2021}\\
+{\fonttitle Linguistic Consultant}\\
+{\fontdesc Productive Playhouse\\
+Providing linguistic support in Afrikaans and working on several linguistic tasks, such as providing phonemic transcriptions for words, text normalization and verbalization, and localization, including use of X-SAMPA}\\
+\buffer
+{\fontdate 2021}\\
+{\fonttitle Linguistic Consultant}\\
+{\fontdesc Appen\\
+Phonetic transcription in South African English and Afrikaans\\General transcription}\\
+\buffer
+{\fontdate 2022}\\
+{\fonttitle Copy Writer}\\
+{\fontdesc Independent Online, IOL Tech\\
+Content writing, commentary, news aggregation}\\
+\buffer
+\buffer
+\buffer
+{\hspace{\tcheadshift} \tchead{LANGUAGES}}\\
+\buffer
+{\fonttitle English}\\
+{\fontdesc Native Proficiency}\\
+\buffer
+{\fonttitle Afrikaans}\\
+{\fontdesc Limited fluency; experience with \mbox{phonetic transcription} and localisation}
+}
+
+\posterbox[width=\tcbposterrowheight, notitle, circular arc, rounded corners=all, interior style={fill zoom image={portest2}}, boxrule=3mm, colframe=\leftcol]{name=picture, column=1, rowspan=1, xshift=0.5cm, yshift=0.5cm}{}
+
+
+
+\end{tcbposter}
+\end{document}
