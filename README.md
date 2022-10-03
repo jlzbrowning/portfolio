@@ -1,3 +1,3 @@
 # portfolio
 
-Currently just contains LaTeX code for my CV.
+Currently just contains LaTeX document for my CV.
